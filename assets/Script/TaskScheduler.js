@@ -67,8 +67,8 @@ window.TaskScheduler = {
     createBlockedQuene: function createBlockedQuene(functions, finishCallback, target) {
         var cbq = {};
         cbq.functions = [];
-        for (let i = 0 ; i < functions.length ; i++) {
-            let func = functions[i]
+        for (var i = 0 ; i < functions.length ; i++) {
+            var func = functions[i]
             if (func instanceof Function) {
                 if (target) {
                     cbq.functions.push(func.bind(target));
@@ -86,8 +86,8 @@ window.TaskScheduler = {
                 cbq.functions[cbq.index++]();
             }
         };
-        cbq.index=0
+        cbq.index=0;
         cbq.functions[cbq.index++]();
-        return cbq
+        return cbq;
     }
 };
